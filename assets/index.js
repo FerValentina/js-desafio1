@@ -11,14 +11,16 @@ const botonMenos = document.querySelector(".menos");
 
 let cantidad = 0;
 function valores(){
-    cantidadTotal.textContent = cantidad;
-    total.textContent = `${cantidad*precio}`
+    cantidadTotal.innerHTML = cantidad;
+    total.innerHTML = `${cantidad*precio}`
 }
 botonMas.onclick = function () {
     cantidad++;
     valores();
 }
 botonMenos.onclick = function () {
+   if(cantidad > 0){
     cantidad--;
     valores();
+}
 }
